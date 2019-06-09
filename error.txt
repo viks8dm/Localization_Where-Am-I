@@ -1,0 +1,50 @@
+root@74da63e4f885:/home/workspace/catkin_ws# roslaunch my_robot amcl.launch 
+... logging to /root/.ros/log/b32ccb0a-8a7a-11e9-82b0-0242ac110002/roslaunch-74da63e4f885-5590.log
+Checking log directory for disk usage. This may take awhile.
+Press Ctrl-C to interrupt
+Done checking log file disk usage. Usage is <1GB.
+
+Traceback (most recent call last):
+  File "/opt/ros/kinetic/lib/python2.7/dist-packages/roslaunch/__init__.py", line 306, in main
+    p.start()
+  File "/opt/ros/kinetic/lib/python2.7/dist-packages/roslaunch/parent.py", line 268, in start
+    self._start_infrastructure()
+  File "/opt/ros/kinetic/lib/python2.7/dist-packages/roslaunch/parent.py", line 217, in _start_infrastructure
+    self._load_config()
+  File "/opt/ros/kinetic/lib/python2.7/dist-packages/roslaunch/parent.py", line 132, in _load_config
+    roslaunch_strs=self.roslaunch_strs, verbose=self.verbose)
+  File "/opt/ros/kinetic/lib/python2.7/dist-packages/roslaunch/config.py", line 451, in load_config_default
+    loader.load(f, config, verbose=verbose)
+  File "/opt/ros/kinetic/lib/python2.7/dist-packages/roslaunch/xmlloader.py", line 749, in load
+    self._load_launch(launch, ros_config, is_core=core, filename=filename, argv=argv, verbose=verbose)
+  File "/opt/ros/kinetic/lib/python2.7/dist-packages/roslaunch/xmlloader.py", line 721, in _load_launch
+    self._recurse_load(ros_config, launch.childNodes, self.root_context, None, is_core, verbose)
+  File "/opt/ros/kinetic/lib/python2.7/dist-packages/roslaunch/xmlloader.py", line 657, in _recurse_load
+    n = self._node_tag(tag, context, ros_config, default_machine, verbose=verbose)
+  File "/opt/ros/kinetic/lib/python2.7/dist-packages/roslaunch/xmlloader.py", line 95, in call
+    return f(*args, **kwds)
+  File "/opt/ros/kinetic/lib/python2.7/dist-packages/roslaunch/xmlloader.py", line 410, in _node_tag
+    self._rosparam_tag(t, param_ns, ros_config, verbose=verbose)
+  File "/opt/ros/kinetic/lib/python2.7/dist-packages/roslaunch/xmlloader.py", line 95, in call
+    return f(*args, **kwds)
+  File "/opt/ros/kinetic/lib/python2.7/dist-packages/roslaunch/xmlloader.py", line 228, in _rosparam_tag
+    cmd, ns, file, param, subst_value = self.opt_attrs(tag, context, (XmlLoader.ROSPARAM_OPT_ATTRS))
+  File "/opt/ros/kinetic/lib/python2.7/dist-packages/roslaunch/xmlloader.py", line 202, in opt_attrs
+    return [self.resolve_args(tag_value(tag,a), context) for a in attrs]
+  File "/opt/ros/kinetic/lib/python2.7/dist-packages/roslaunch/xmlloader.py", line 183, in resolve_args
+    return substitution_args.resolve_args(args, context=context.resolve_dict, resolve_anon=self.resolve_anon)
+  File "/opt/ros/kinetic/lib/python2.7/dist-packages/roslaunch/substitution_args.py", line 370, in resolve_args
+    resolved = _resolve_args(resolved, context, resolve_anon, commands)
+  File "/opt/ros/kinetic/lib/python2.7/dist-packages/roslaunch/substitution_args.py", line 383, in _resolve_args
+    resolved = commands[command](resolved, a, args, context)
+  File "/opt/ros/kinetic/lib/python2.7/dist-packages/roslaunch/substitution_args.py", line 151, in _find
+    source_path_to_packages=source_path_to_packages)
+  File "/opt/ros/kinetic/lib/python2.7/dist-packages/roslaunch/substitution_args.py", line 197, in _find_executable
+    full_path = _get_executable_path(rp.get_path(args[0]), path)
+  File "/usr/lib/python2.7/dist-packages/rospkg/rospack.py", line 203, in get_path
+    raise ResourceNotFound(name, ros_paths=self._ros_paths)
+ResourceNotFound: udacity_bot
+ROS path [0]=/opt/ros/kinetic/share/ros
+ROS path [1]=/home/workspace/catkin_ws/src
+ROS path [2]=/opt/ros/kinetic/share
+root@74da63e4f885:/home/workspace/catkin_ws# 
